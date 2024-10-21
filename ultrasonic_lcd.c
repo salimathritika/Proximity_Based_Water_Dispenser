@@ -1,4 +1,4 @@
-//detecting distance only at the beginning
+//detecting distance correctly!!!!
 
 #include <stdio.h> 
 #include <LPC17xx.h> 
@@ -71,11 +71,11 @@ int main()
   //LPC_PINCON->PINSEL1 &= 0xfffffff0; // Interface ECHO P0.16
 	LPC_PINCON->PINSEL1 =0;
   LPC_GPIO0->FIODIR |= TRIGGER_PIN | 1 << 17; // Direction for TRIGGER pin and Buzzer
-  LPC_GPIO1->FIODIR |= 0 << 16|3<<27|0xF<<23; // Direction for ECHO PIN 
-	LPC_GPIO0->FIODIR=3<<27 | 0xF<<23;
+  //LPC_GPIO1->FIODIR |= 0 << 16|3<<27|0xF<<23; // Direction for ECHO PIN 
+	LPC_GPIO0->FIODIR|=0<<16|3<<27 | 0xF<<23;
   LPC_GPIO0->FIODIR |= LED_Pinsel << 4; // Direction for LED 
   LPC_PINCON->PINSEL1 |= 0;
-  LPC_GPIO0->FIODIR |= 0XF << 23 | 1 << 27 | 1 << 28; // Direction For LCDs
+  //LPC_GPIO0->FIODIR |= 0XF << 23 | 1 << 27 | 1 << 28; // Direction For LCDs
 
 
   i = 0;
@@ -107,6 +107,7 @@ int main()
           LPC_GPIO0->FIOCLR = LED_Pinsel << 4; 
           LPC_GPIO0->FIOCLR = 1 << 17;
       }
+			
 			//lcd 
 		flag1=0;
 	for(i=0;i<9;i++)
@@ -128,7 +129,8 @@ int main()
 		temp1=s[i];
 		lcd_write();
 	}
-    //delay(880002);
+	
+    delay(88000);
 }
 }
 
