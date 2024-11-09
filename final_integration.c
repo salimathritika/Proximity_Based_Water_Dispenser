@@ -101,7 +101,7 @@ int main()
 	
 	LPC_GPIO1->FIODIR|=1<<24;//p1.24
 	
-  LPC_GPIO0->FIODIR |= TRIGGER_PIN_W | 1 << 17; // Direction for TRIGGER pin and Buzzer
+  LPC_GPIO0->FIODIR |= TRIGGER_PIN_W | 1 << 17; // Direction for TRIGGER pin 
 	LPC_GPIO0->FIODIR|=0<<16|3<<27 | 0xF<<23;
   LPC_GPIO0->FIODIR |= LED_Pinsel << 4; // Direction for LED 
   LPC_PINCON->PINSEL1 |= 0;	
