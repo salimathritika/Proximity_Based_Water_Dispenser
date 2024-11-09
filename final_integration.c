@@ -1,5 +1,6 @@
 //FINAL WORKING CODE WITH ALL INTEGRATION HAPPENING FINAL FINAL FINAL
 //p1.24 for relay
+//RAN ON THE DAY OF PIC TAKING
 
 /*
 *for ultrasonic sensor detecting proximity:
